@@ -30,7 +30,7 @@ public class HandController : MonoBehaviour {
 
 	public void tempTester()
 	{
-		Initiative hunter = new hunter();
-		hunter.effect();
+		Initiative archer = new archer();
+		archer.effect();
 	}
 }

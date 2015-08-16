@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TrashProgram : MonoBehaviour {
+public class TrashProgram : Subroutine {
 
 	// Use this for initialization
 	void Start () 
