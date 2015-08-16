@@ -7,6 +7,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MouseClick : MonoBehaviour 
 {
@@ -14,7 +15,9 @@ public class MouseClick : MonoBehaviour
 	//private Vector3 projectorPosition;
 	private Vector2 clicked = new Vector2(-2, -2);
 
+
 	public  GameObject projector;
+	public List<Vector2> paths = new List<Vector2>();
 
 	
 	void Awake () 
@@ -53,8 +56,6 @@ public class MouseClick : MonoBehaviour
 
 	void Update () 
 	{
-		Debug.Log (mousePoint());
-
 		if (Input.GetButtonDown ("Fire1")) 
 		{			
 			clicked = mousePoint();
@@ -102,13 +103,22 @@ public class MouseClick : MonoBehaviour
 		// Vector2  mousePoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 		if (Physics.Raycast (mouseRay, out rayHit)) 
 		{
-			//Debug.Log ("Mouse hit " + rayHit.transform.name + " at " + rayHit.point);
+			Debug.Log ("Mouse hit " + rayHit.transform.name + " at " + rayHit.point);
 			Vector2 point = new Vector2 ();
 			//point.x = Mathf.Round (rayHit.point.x / 10) * 10;
 			//point.y = (Mathf.Round (rayHit.point.z / 10) * 10) + 5;
-			point.x = rayHit.point.x;
-			point.y = rayHit.point.z;
-			return point;
+
+			foreach (Vector2 vector in paths)
+			{
+				if ((vector.x - 3) >= rayHit.point.z && ((vector.y + 3) <= rayHit.point.z))
+				{
+					Debug.Log (string.Format ("Vector = {0}, rayHit.point = {1}", vector, rayHit.point));
+					point.x = rayHit.point.z;
+					point.x = Mathf.Round (rayHit.point.x / 10) * 10;
+					return point;
+				}
+			}
+			return new Vector2 (-1f, -1f);
 		}
 		// Checks to see if the vector is on the playing surface, returns (-1,-1) if not
 		Vector2 invalid = new Vector2(-1f, -1f);
