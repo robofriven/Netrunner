@@ -30,7 +30,6 @@ public class hunter : Initiative
 		if (position == new Vector2(-2,-2) || position == new Vector2(-1,-1))
 		{
 			Debug.LogWarning ("Put it in a logical place!");
-			Debug.LogError ("position passed to hunter is " +  position.x + " " + position.y);
 			EventHandler.waitForClick();
 		}
 		else

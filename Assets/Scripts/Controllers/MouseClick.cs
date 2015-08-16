@@ -110,13 +110,14 @@ public class MouseClick : MonoBehaviour
 
 			foreach (Vector2 vector in paths)
 			{
-				if ((vector.x - 3) >= rayHit.point.z && ((vector.y + 3) <= rayHit.point.z))
+				Debug.Log (string.Format ("Vector = {0}, rayHit.point = {1}", vector, rayHit.point));
+				if (((vector.x - 3f) <= rayHit.point.z) && ((vector.y + 3f) >= rayHit.point.z))
 				{
-					Debug.Log (string.Format ("Vector = {0}, rayHit.point = {1}", vector, rayHit.point));
-					point.x = rayHit.point.z;
+					point.y = vector.y - 5;
 					point.x = Mathf.Round (rayHit.point.x / 10) * 10;
 					return point;
 				}
+				//Debug.Log ("Wasn't between the two for some reason");
 			}
 			return new Vector2 (-1f, -1f);
 		}
