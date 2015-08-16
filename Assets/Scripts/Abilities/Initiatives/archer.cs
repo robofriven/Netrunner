@@ -32,7 +32,7 @@ public class archer : Initiative
 
 		if (position == new Vector2(-2,-2) || position == new Vector2(-1,-1))
 		{
-			Debug.LogWarning ("Put it in a logical place!");
+			Debug.LogWarning ("Put it in a logical place! ... Popup and all that.");
 			EventHandler.waitForClick();
 		}
 		else
@@ -48,11 +48,6 @@ public class archer : Initiative
 			TrashProgram trashProgram2 = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
 			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
 			ice.build(name, rezCost, type, type2, iceStr);
-
-			payment.name = "Payment";
-			trashProgram.name = "Trash Program";
-			trashProgram2.name = "Trash Program2";
-			endRun.name = "End Run";
 
 			ice.subroutines.Add(payment);
 			ice.subroutines.Add(trashProgram);

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class enigma : Initiative
 {
@@ -19,13 +20,33 @@ public class enigma : Initiative
 	{
 		Debug.Log ("Building Enigma");
 
-		Vector2 click = mouseClick ();
-		Vector3 position = new Vector3(click.x, 0, click.y);
-		GameObject fw = PhotonNetwork.Instantiate ("firewall", position, Quaternion.identity, 0);
-		fw.AddComponent<Ice>();
-		Ice ice = fw.GetComponent<Ice>();
-		TimeLoss timeLoss = ice.gameObject.AddComponent<TimeLoss>() as TimeLoss;
-		EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
-		ice.build(name, rezCost, type, type2, iceStr);
+
+		Debug.Log ("Archer");
+		EventHandler.waitForClick();
+		EventHandler.CLICKRECEIVED += fwInstantiate;
+	}
+	public void fwInstantiate(Vector2 position)
+	{
+		
+		if (position == new Vector2(-2,-2) || position == new Vector2(-1,-1))
+		{
+			Debug.LogWarning ("Put it in a logical place! ... Popup and all that.");
+			EventHandler.waitForClick();
+		}
+		else
+		{
+			Vector3 click = new Vector3(position.x, 2.5f, position.y);
+			
+			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
+			
+			fw.AddComponent<Ice>();
+			Ice ice = fw.GetComponent<Ice>();
+			TimeLoss timeLoss = ice.gameObject.AddComponent<TimeLoss>() as TimeLoss;
+			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
+			ice.build(name, rezCost, type, type2, iceStr);
+			
+			ice.subroutines.Add(timeLoss);
+			ice.subroutines.Add(endRun);
+		}
 	}
 }
