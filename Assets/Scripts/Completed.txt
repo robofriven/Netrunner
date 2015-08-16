@@ -1,0 +1,19 @@
+Corp:
+Beanstalk
+Hedgefund
+Melange
+padCampaign
+Enigma
+Hunter
+IceWall
+Shadow
+WallOfStatic
+
+
+Runner:
+accessGlobalsec
+AkamatsuMemChip
+Diesel
+Magnum Opus
+Sure Gamble
+
