@@ -106,6 +106,8 @@ public class MouseClick : MonoBehaviour
 			Vector2 point = new Vector2 ();
 			//point.x = Mathf.Round (rayHit.point.x / 10) * 10;
 			//point.y = (Mathf.Round (rayHit.point.z / 10) * 10) + 5;
+			point.x = rayHit.point.x;
+			point.y = rayHit.point.z;
 			return point;
 		}
 		// Checks to see if the vector is on the playing surface, returns (-1,-1) if not
