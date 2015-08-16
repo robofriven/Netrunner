@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class archer : Initiative
 {
+
 	public archer()
 	{
 		name = "Archer";
@@ -22,16 +24,40 @@ public class archer : Initiative
 		// end the run
 
 		Debug.Log ("Archer");
+		EventHandler.waitForClick();
+		EventHandler.CLICKRECEIVED += fwInstantiate;
+	}
+	public void fwInstantiate(Vector2 position)
+	{
 
-		Vector2 click = mouseClick ();
-		Vector3 position = new Vector3(click.x, 0, click.y);
-		GameObject fw = PhotonNetwork.Instantiate ("firewall", position, Quaternion.identity, 0);
-		fw.AddComponent<Ice>();
-		Ice ice = fw.GetComponent<Ice>();
-		Payment payment = ice.gameObject.AddComponent<Payment>() as Payment;
-		TrashProgram trashProgram = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
-		TrashProgram trashProgram2 = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
-		EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
-		ice.build(name, rezCost, type, type2, iceStr);
+		if (position == new Vector2(-2,-2) || position == new Vector2(-1,-1))
+		{
+			Debug.LogWarning ("Put it in a logical place!");
+			EventHandler.waitForClick();
+		}
+		else
+		{
+			Vector3 click = new Vector3(position.x, 2.5f, position.y);
+			
+			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
+
+			fw.AddComponent<Ice>();
+			Ice ice = fw.GetComponent<Ice>();
+			Payment payment = ice.gameObject.AddComponent<Payment>() as Payment;
+			TrashProgram trashProgram = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
+			TrashProgram trashProgram2 = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
+			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
+			ice.build(name, rezCost, type, type2, iceStr);
+
+			payment.name = "Payment";
+			trashProgram.name = "Trash Program";
+			trashProgram2.name = "Trash Program2";
+			endRun.name = "End Run";
+
+			ice.subroutines.Add(payment);
+			ice.subroutines.Add(trashProgram);
+			ice.subroutines.Add(trashProgram2);
+			ice.subroutines.Add(endRun);
+		}
 	}
 }

@@ -14,6 +14,11 @@ public class hunter : Initiative
 		type2 = "Security-Tracer-Observer";
 		kind = "Neutral";
 	}
+
+	void OnDestroy()
+	{
+		EventHandler.CLICKRECEIVED -= fwInstantiate;
+	}
 	
 	public override void effect()
 	{
@@ -40,6 +45,7 @@ public class hunter : Initiative
 			
 			fw.AddComponent<Ice>();
 			Ice ice = fw.GetComponent<Ice>();
+			ice.name = "hunter";
 			Trace trace = ice.gameObject.AddComponent<Trace>() as Trace;
 			trace.str = 3;
 			ice.build(name, rezCost, type, type2, iceStr);

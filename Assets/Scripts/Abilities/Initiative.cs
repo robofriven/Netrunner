@@ -7,6 +7,7 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class Initiative : Ability
 {
 
@@ -21,7 +22,7 @@ public class Initiative : Ability
 	public int trashCost;
 	public bool rezzed;
 	public bool inHand;
-
+	
 	public MouseClick mouse;
 
 
@@ -41,6 +42,7 @@ public class Initiative : Ability
 		inHand 			= true;
 
 		mouse = GameObject.FindObjectOfType<MouseClick>();
+
 	}
 
 	public void timer(int num)

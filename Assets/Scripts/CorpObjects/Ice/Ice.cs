@@ -18,6 +18,7 @@ public class Ice : CorpObject {
 	public string type;
 	public string type2;
 	public MouseClick mouseclick;
+	public List<Subroutine>subroutines = new List<Subroutine>();
 
 	int iceStr;
 
