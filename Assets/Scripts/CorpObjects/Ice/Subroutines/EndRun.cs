@@ -7,6 +7,7 @@ public class EndRun : Subroutine {
 	void Start () 
 	{
 		name = "End Run";
+		abbrName = "endRun";
 		description = "Ends the run";
 	}
 

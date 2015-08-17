@@ -210,7 +210,7 @@
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\PayAgenda.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\CorpObject.cs" />
-     <Compile Include="Assets\Scripts\CorpObjects\Ice\Ice.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Ice.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\Advancement.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\EndRun.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\Payment.cs" />

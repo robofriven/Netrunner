@@ -14,9 +14,7 @@ public class MouseClick : MonoBehaviour
 	//private Vector2 mousePosition;
 	//private Vector3 projectorPosition;
 	private Vector2 clicked = new Vector2(-2, -2);
-
-
-	public  GameObject projector;
+	
 	public List<Vector2> paths = new List<Vector2>();
 
 	
@@ -30,7 +28,6 @@ public class MouseClick : MonoBehaviour
 	public void called()
 	{
 		this.enabled = true;
-		projector.SetActive (true);
 	}
 
 

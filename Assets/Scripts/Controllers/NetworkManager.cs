@@ -9,7 +9,6 @@ public class NetworkManager : MonoBehaviour {
 
 	public Corp corp;
 	public Runner runner;
-	public GameObject projector;
 	public Canvas runnerUI;
 	public Canvas corpUI;
 
@@ -101,8 +100,6 @@ public class NetworkManager : MonoBehaviour {
 		GameObject corpGO = PhotonNetwork.Instantiate("Corp", corp.transform.position, corp.transform.rotation, 0);
 		((MonoBehaviour)corpGO.GetComponent("CorpController")).enabled = true;
 		CorpController corpController = corpGO.GetComponent<CorpController>();
-		GameObject proj = GameObject.Instantiate(projector);
-		(proj.GetComponent<Projector>()).enabled = true;
 		corpGO.transform.FindChild ("MainCamera").gameObject.SetActive(true);
 		corpUI.enabled = true;
 

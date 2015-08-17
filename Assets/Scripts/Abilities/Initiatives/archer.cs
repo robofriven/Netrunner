@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class archer : Initiative
 {
+	private List<Subroutine> list = new List<Subroutine>();
 
 	public archer()
 	{
@@ -40,19 +41,15 @@ public class archer : Initiative
 			Vector3 click = new Vector3(position.x, 2.5f, position.y);
 			
 			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
-
-			fw.AddComponent<Ice>();
 			Ice ice = fw.GetComponent<Ice>();
-			Payment payment = ice.gameObject.AddComponent<Payment>() as Payment;
-			TrashProgram trashProgram = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
-			TrashProgram trashProgram2 = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
-			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
-			ice.build(name, rezCost, type, type2, iceStr);
 
-			ice.subroutines.Add(payment);
-			ice.subroutines.Add(trashProgram);
-			ice.subroutines.Add(trashProgram2);
-			ice.subroutines.Add(endRun);
+			list.Add(new Payment());
+			list.Add(new TrashProgram());
+			list.Add(new TrashProgram());
+			list.Add(new EndRun());
+
+
+			ice.build(name, rezCost, type, type2, iceStr, list);
 		}
 	}
 }

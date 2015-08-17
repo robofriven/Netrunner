@@ -4,7 +4,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Subroutine : MonoBehaviour 
+public class Subroutine
 {
 	// name inherited from MonoBehaviour
 	new public string name;

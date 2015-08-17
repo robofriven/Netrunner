@@ -9,9 +9,11 @@ public class Advancement : Subroutine {
 	void Start () 
 	{
 		name = "Advancement";
+		abbrName = name;
 		description = "This can be advanced, +1 str each time advanced";
 		tokens = 0;
-		ice = this.gameObject.GetComponent<Ice>();
+		// TODO ice = ;  I have no idea how to find THE object this is attached to if this isn't a GameObject
+
 	}
 
 	void Update()

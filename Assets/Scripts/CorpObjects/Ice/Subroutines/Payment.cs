@@ -8,6 +8,8 @@ public class Payment : Subroutine {
 
 	void Start () 
 	{
+		name = "payment";
+		abbrName = name;
 		description = "This is the payment subroutine!";
 		corp = this.gameObject.GetComponent<Corp>();
 	}

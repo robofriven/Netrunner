@@ -6,6 +6,7 @@ public class TimeLoss : Subroutine {
 	// Use this for initialization
 	void Start () {
 		name = "Time Loss";
+		abbrName = "timeLoss";
 		description = "Causes a 10s 'backlash' after the run";
 	}
 
