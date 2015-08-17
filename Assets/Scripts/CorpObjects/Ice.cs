@@ -23,17 +23,11 @@ public class Ice : CorpObject {
 	int iceStr;
 
 	
-	public void build(string name, int cost, string typ, string typ2, int str, List<Subroutine> subroutines, bool isRezzed = false)
+	public void build(string name, int cost, string typ, string typ2, int str, bool isRezzed = false)
 	{
 		this.name = name;
 		rezCost = cost;
 		type = typ;
 		type2 = typ2;
-
-		foreach (Subroutine sub in subroutines)
-		{
-
-		}
-
 	}
 }
