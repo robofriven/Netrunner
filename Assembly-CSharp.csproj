@@ -207,6 +207,8 @@
      <Compile Include="Assets\Scripts\Controllers\MouseClick.cs" />
      <Compile Include="Assets\Scripts\Controllers\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\RunnerController.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Agenda\PayAgenda.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\CorpObject.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Ice.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\Advancement.cs" />
