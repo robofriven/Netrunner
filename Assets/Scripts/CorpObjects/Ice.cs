@@ -30,4 +30,18 @@ public class Ice : CorpObject {
 		type = typ;
 		type2 = typ2;
 	}
+	/*
+	public void notify
+	{
+		if (stream.isWriting)
+		{
+			// what to do when writing
+			this.name = name;
+			this.rezCost = rezCost;
+			this.type = type;
+			this.type2 = type2;
+			this.subroutines = subroutines;
+		}
+	}
+	*/
 }
