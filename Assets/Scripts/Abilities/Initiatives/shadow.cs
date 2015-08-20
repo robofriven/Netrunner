@@ -34,16 +34,7 @@ public class shadow : Initiative
 		{
 			Vector3 click = new Vector3(position.x, 2.5f, position.y);
 			
-			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
-			
-			fw.AddComponent<Ice>();
-			Ice ice = fw.GetComponent<Ice>();
-			Payment payment = ice.gameObject.AddComponent<Payment>() as Payment;
-			Trace trace = ice.gameObject.AddComponent<Trace>() as Trace;
-			ice.build(name, rezCost, type, type2, iceStr);
-			
-			ice.subroutines.Add(payment);
-			ice.subroutines.Add(trace);
+			GameObject fw = PhotonNetwork.Instantiate ("Shadow", click, Quaternion.identity, 0);
 		}
 	}
 }

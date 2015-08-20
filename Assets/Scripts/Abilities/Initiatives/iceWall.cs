@@ -37,16 +37,7 @@ public class iceWall : Initiative
 		{
 			Vector3 click = new Vector3(position.x, 2.5f, position.y);
 			
-			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
-			
-			fw.AddComponent<Ice>();
-			Ice ice = fw.GetComponent<Ice>();
-			Advancement advance = ice.gameObject.AddComponent<Advancement>() as Advancement;
-
-			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
-			ice.build(name, rezCost, type, type2, iceStr);
-
-			ice.subroutines.Add(endRun);
+			GameObject fw = PhotonNetwork.Instantiate ("Ice Wall", click, Quaternion.identity, 0);
 		}
 	}
 }

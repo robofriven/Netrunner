@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class archer : Initiative
 {
 
+    GameObject fw;
+
 	public archer()
 	{
 		name = "Archer";
@@ -38,15 +40,10 @@ public class archer : Initiative
 		else
 		{
 			Vector3 click = new Vector3(position.x, 2.5f, position.y);
+            string[] test = new string[1];
+            test[0] = "Testing";
 			
-			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
-			Ice ice = fw.GetComponent<Ice>();
-			Payment payment = ice.gameObject.AddComponent<Payment>() as Payment;
-			TrashProgram trashprogram = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
-			TrashProgram trashprogram2 = ice.gameObject.AddComponent<TrashProgram>() as TrashProgram;
-			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
-
-			ice.build(name, rezCost, type, type2, iceStr);
+			fw = PhotonNetwork.Instantiate ("Archer", click, Quaternion.identity, 0, test);
 		}
 	}
 }

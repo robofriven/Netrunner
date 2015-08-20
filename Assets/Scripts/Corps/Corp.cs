@@ -11,6 +11,8 @@ public class Corp : MonoBehaviour
 	public string identity;			// probably has a use
 	public int maxInits;			// max cards in deck
 	public int externalInits;		// max allowed from other corps
+	public float timeSinceLastScore;// This is time since last agenda score
+	public int badPub;
 
 	public List<Ability> deck;	// used to store the deck
 	public int handSize = 5;
@@ -26,6 +28,8 @@ public class Corp : MonoBehaviour
 		externalInits = 15;
 		handSize = 5;
 		deck = buildDeck ();
+		timeSinceLastScore = 0f;
+		badPub = 0;
 	}
 
 	public virtual void effect()

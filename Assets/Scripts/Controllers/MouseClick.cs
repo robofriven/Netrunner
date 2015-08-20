@@ -1,9 +1,8 @@
-﻿// TODO Add a  projector to the Update
+﻿// TODO Add a  projector to the Update... projector not seeming to work so well, not sure how to deal with that.
 // TODO Check to see if there is something there already
 // TODO Force the corp to only have set options of where to put things.
 // TODO screen popup for info
 
-// TODO Need to fix what I broke trying ot get the projector to work
 
 using UnityEngine;
 using System.Collections;
@@ -114,7 +113,6 @@ public class MouseClick : MonoBehaviour
 					point.x = Mathf.Round (rayHit.point.x / 10) * 10;
 					return point;
 				}
-				//Debug.Log ("Wasn't between the two for some reason");
 			}
 			return new Vector2 (-1f, -1f);
 		}

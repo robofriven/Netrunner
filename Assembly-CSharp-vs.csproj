@@ -157,7 +157,6 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
      <Compile Include="Assets\Scripts\Abilities\Initiative.cs" />
-     <Compile Include="Assets\Scripts\Abilities\Initiatives\Form.cs" />
      <Compile Include="Assets\Scripts\Abilities\Initiatives\aggressiveNegotiation.cs" />
      <Compile Include="Assets\Scripts\Abilities\Initiatives\archer.cs" />
      <Compile Include="Assets\Scripts\Abilities\Initiatives\beanstalkRoyalties.cs" />
@@ -208,9 +207,16 @@
      <Compile Include="Assets\Scripts\Controllers\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\RunnerController.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
-     <Compile Include="Assets\Scripts\CorpObjects\Agenda\PayAgenda.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Agenda\Hostile.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Agenda\Posted.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Agenda\PriorityReq.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Agenda\Private.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Asset.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Assets\Melange.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Assets\PAD.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Assets\Security.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\CorpObject.cs" />
-     <Compile Include="Assets\Scripts\CorpObjects\Ice.cs" />
+     <Compile Include="Assets\Scripts\CorpObjects\Ice\Ice.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\Advancement.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\EndRun.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\Payment.cs" />
@@ -222,6 +228,7 @@
      <Compile Include="Assets\Scripts\Corps\Weyland.cs" />
      <Compile Include="Assets\Scripts\Runners\Runner.cs" />
      <Compile Include="Assets\Scripts\Runners\kate.cs" />
+     <Compile Include="Assets\Scripts\Typer.cs" />
      <Compile Include="Assets\Scripts\create.cs" />
      <Compile Include="Assets\Scripts\hp.cs" />
      <Compile Include="Assets\Scripts\randomDealer.cs" />

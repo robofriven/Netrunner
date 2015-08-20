@@ -23,25 +23,11 @@ public class Ice : CorpObject {
 	int iceStr;
 
 	
-	public void build(string name, int cost, string typ, string typ2, int str, bool isRezzed = false)
+	public void build(string nme, int cost, string typ, string typ2, int str, bool isRezzed = false)
 	{
-		this.name = name;
+		name = nme;
 		rezCost = cost;
 		type = typ;
 		type2 = typ2;
 	}
-	/*
-	public void notify
-	{
-		if (stream.isWriting)
-		{
-			// what to do when writing
-			this.name = name;
-			this.rezCost = rezCost;
-			this.type = type;
-			this.type2 = type2;
-			this.subroutines = subroutines;
-		}
-	}
-	*/
 }

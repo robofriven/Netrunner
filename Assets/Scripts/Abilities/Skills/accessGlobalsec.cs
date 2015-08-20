@@ -19,12 +19,12 @@ public class accessGlobalsec : Skill
 	public override void effect()
 	{
 		Debug.Log("Access to Globalsec");
-		timer (1);
+		gameController.timer(1);
 		Runner runner = findRunner ();
 		if (runner.credits >= cost)
 		{
 			runner.links ++;
-			runner.credits --;
+			runner.credits -= cost;
 		}
 	}
 }

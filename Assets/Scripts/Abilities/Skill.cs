@@ -16,10 +16,13 @@ public class Skill : Ability
 	public int    memCost;	 // memory cost of programs
 	public string faction;	 // which class this card belongs to
 
+	public GameController gameController;
+
 	// Use this for initialization
 	public Skill() {
 		description = "This person was way too busy to bother putting in a description";
-		castTime = 10;	
+		castTime = 10;
+		gameController = GameObject.FindObjectOfType<GameController>() as GameController;
 	}
 
 	public virtual void effect(int temp)

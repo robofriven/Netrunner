@@ -9,8 +9,8 @@ public class NetworkManager : MonoBehaviour {
 
 	public Corp corp;
 	public Runner runner;
-	public Canvas runnerUI;
-	public Canvas corpUI;
+	public GameObject runnerUI;
+	public GameObject corpUI;
 
 
 	// Use this for initialization
@@ -101,7 +101,7 @@ public class NetworkManager : MonoBehaviour {
 		((MonoBehaviour)corpGO.GetComponent("CorpController")).enabled = true;
 		CorpController corpController = corpGO.GetComponent<CorpController>();
 		corpGO.transform.FindChild ("MainCamera").gameObject.SetActive(true);
-		corpUI.enabled = true;
+		corpUI.SetActive(true);
 
 	}
 
@@ -113,7 +113,7 @@ public class NetworkManager : MonoBehaviour {
 		((MonoBehaviour)runnerGO.GetComponent("RunnerController")).enabled = true;
 		((MonoBehaviour)runnerGO.GetComponent("create")).enabled = true;
 		runnerGO.transform.FindChild ("MainCamera").gameObject.SetActive(true);
-		runnerUI.enabled = true;
+		runnerUI.SetActive(true);
 
 	}
 

@@ -17,8 +17,8 @@ public class priorityRequisition : Initiative
 	
 	public override void effect()
 	{
-		Debug.Log ("Priority Requisition");
-		// Score Agenda
-		// Rez piece of ice for free
+		Vector3 position = new Vector3(-65, 5, 5);
+		GameObject fw = PhotonNetwork.Instantiate ("Priority Requisition", position , Quaternion.identity, 0);
+
 	}
 }

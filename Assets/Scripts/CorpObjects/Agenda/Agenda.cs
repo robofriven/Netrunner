@@ -7,12 +7,14 @@ public class Agenda : CorpObject {
 
     new public string name;
     public string description;
+	public string type;
+	public string type2;
     public int points;
     public int advance;
     public int completionCost;
-    public int completionPoints;
-    public bool complete;
+	public bool complete;
     public Corp corp;
+	public GameController gameController;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class Agenda : CorpObject {
         complete = false;
 
         corp = GameObject.FindObjectOfType(typeof(Corp)) as Corp;
+		gameController = GameObject.FindObjectOfType<GameController>() as GameController;
     }
 
     public void advanceAgenda()
@@ -33,7 +36,8 @@ public class Agenda : CorpObject {
 
         if (advance == completionCost)
         {
-            // Do whatever the agenda does on completion
+			print("Agenda Scored");
+			activate();
         }
     }
 
@@ -41,4 +45,9 @@ public class Agenda : CorpObject {
     {
         Debug.LogWarning("Agenda's activate() method not implemented.");
     }
+
+	public Runner findRunner()
+	{
+		return GameObject.FindObjectOfType<Runner>() as Runner;
+	}
 }

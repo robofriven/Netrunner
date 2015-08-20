@@ -1,16 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Abilities\Initiatives\archer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Abilities\Initiatives\privateSecurity.cs">
     <Files>
-      <File FileName="Assets\Scripts\CorpObjects\Ice.cs" Line="46" Column="4" />
-      <File FileName="Assets\Scripts\Abilities\Initiatives\archer.cs" Line="43" Column="37" />
-      <File FileName="Assets\Scripts\CorpObjects\Ice\Subroutines\Subroutine.cs" Line="7" Column="40" />
-      <File FileName="Assets\Scripts\CorpObjects\Ice\Subroutines\TimeLoss.cs" Line="18" Column="1" />
-      <File FileName="Assets\Scripts\CorpObjects\CorpObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CorpObjects\Ice\Subroutines\Advancement.cs" Line="11" Column="24" />
-      <File FileName="Assets\Scripts\CorpObjects\Ice\Subroutines\EndRun.cs" Line="9" Column="20" />
-      <File FileName="Assets\Scripts\CorpObjects\Ice\Subroutines\Payment.cs" Line="11" Column="20" />
-      <File FileName="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonView.cs" Line="530" Column="1" />
+      <File FileName="Assets\Scripts\CorpObjects\Agenda\Posted.cs" Line="7" Column="1" />
+      <File FileName="Assets\Scripts\Controllers\HandController.cs" Line="33" Column="44" />
+      <File FileName="Assets\Scripts\Abilities\Initiatives\hostileTakeover.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" Line="49" Column="28" />
+      <File FileName="Assets\Scripts\Abilities\Initiatives\priorityRequisition.cs" Line="21" Column="67" />
+      <File FileName="Assets\Scripts\CorpObjects\Agenda\PriorityReq.cs" Line="22" Column="36" />
+      <File FileName="Assets\Scripts\Abilities\Initiatives\privateSecurity.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

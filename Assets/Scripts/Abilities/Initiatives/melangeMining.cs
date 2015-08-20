@@ -17,16 +17,7 @@ public class melangeMining : Initiative
 	
 	public override void effect()
 	{
-		Debug.Log ("Mining corp ho!");
-		if (rezzed)
-		{
-			timer(3);
-			Corp corp = findCorp();
-			corp.credits += 7;
-		}
-		else
-		{
-			rezInit();
-		}
+		Vector3 position = new Vector3(-65, 5, 5);
+		GameObject fw = PhotonNetwork.Instantiate ("Melange Mining Corp", position , Quaternion.identity, 0);
 	}
 }

@@ -37,16 +37,7 @@ public class enigma : Initiative
 		{
 			Vector3 click = new Vector3(position.x, 2.5f, position.y);
 			
-			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
-			
-			fw.AddComponent<Ice>();
-			Ice ice = fw.GetComponent<Ice>();
-			TimeLoss timeLoss = ice.gameObject.AddComponent<TimeLoss>() as TimeLoss;
-			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
-			ice.build(name, rezCost, type, type2, iceStr);
-			
-			ice.subroutines.Add(timeLoss);
-			ice.subroutines.Add(endRun);
+			GameObject fw = PhotonNetwork.Instantiate ("Enigma", click, Quaternion.identity, 0);
 		}
 	}
 }

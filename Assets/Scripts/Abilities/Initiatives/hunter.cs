@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class hunter : Initiative
 {
@@ -45,10 +46,7 @@ public class hunter : Initiative
 			
 			fw.AddComponent<Ice>();
 			Ice ice = fw.GetComponent<Ice>();
-			ice.name = "hunter";
-			Trace trace = ice.gameObject.AddComponent<Trace>() as Trace;
-			trace.str = 3;
-			ice.build(name, rezCost, type, type2, iceStr);
+			ice.name = "Hunter";
 		}
 	}
 }
