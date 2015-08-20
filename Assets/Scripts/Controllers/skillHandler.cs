@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class skillHandler : MonoBehaviour
+public class SkillHandler : MonoBehaviour
 {
 
 	public List<Skill> skills;

@@ -206,6 +206,7 @@
      <Compile Include="Assets\Scripts\Controllers\MouseClick.cs" />
      <Compile Include="Assets\Scripts\Controllers\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\RunnerController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\skillHandler.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Hostile.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Posted.cs" />
@@ -232,7 +233,6 @@
      <Compile Include="Assets\Scripts\create.cs" />
      <Compile Include="Assets\Scripts\hp.cs" />
      <Compile Include="Assets\Scripts\randomDealer.cs" />
-     <Compile Include="Assets\Scripts\skillHandler.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

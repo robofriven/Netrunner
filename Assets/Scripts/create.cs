@@ -65,7 +65,7 @@ public class create : MonoBehaviour {
 
 	void useSkill()
 	{
-		skillHandler handler = GameObject.FindObjectOfType(typeof(skillHandler)) as skillHandler;
+		SkillHandler handler = GameObject.FindObjectOfType(typeof(SkillHandler)) as SkillHandler;
 		if (handler.active >= 0)
 		{
 			handler.skills[handler.active].effect();

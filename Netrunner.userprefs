@@ -1,14 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Abilities\Initiatives\privateSecurity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controllers\skillHandler.cs">
     <Files>
-      <File FileName="Assets\Scripts\CorpObjects\Agenda\Posted.cs" Line="7" Column="1" />
-      <File FileName="Assets\Scripts\Controllers\HandController.cs" Line="33" Column="44" />
-      <File FileName="Assets\Scripts\Abilities\Initiatives\hostileTakeover.cs" Line="24" Column="1" />
-      <File FileName="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" Line="49" Column="28" />
-      <File FileName="Assets\Scripts\Abilities\Initiatives\priorityRequisition.cs" Line="21" Column="67" />
-      <File FileName="Assets\Scripts\CorpObjects\Agenda\PriorityReq.cs" Line="22" Column="36" />
-      <File FileName="Assets\Scripts\Abilities\Initiatives\privateSecurity.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Abilities\Skill.cs" Line="25" Column="84" />
+      <File FileName="Assets\Scripts\Controllers\NetworkManager.cs" Line="84" Column="40" />
+      <File FileName="Assets\Scripts\create.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Controllers\skillHandler.cs" Line="23" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
