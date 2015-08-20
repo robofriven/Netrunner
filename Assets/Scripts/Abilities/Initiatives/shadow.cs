@@ -19,17 +19,31 @@ public class shadow : Initiative
 	public override void effect()
 	{
 		Debug.Log ("THE SHADOW!!!");
-
-		Vector2 click = mouseClick ();
-		Vector3 position = new Vector3(click.x, 0, click.y);
-		GameObject fw = PhotonNetwork.Instantiate ("firewall", position, Quaternion.identity, 0);
+		EventHandler.waitForClick();
+		EventHandler.CLICKRECEIVED += fwInstantiate;
+	}
+	public void fwInstantiate(Vector2 position)
+	{
 		
-		fw.AddComponent<Ice>();
-		Ice ice = fw.GetComponent<Ice>();
-		Advancement advancement = ice.gameObject.AddComponent<Advancement>() as Advancement;
-		Payment pay = ice.gameObject.AddComponent<Payment>() as Payment;
-		Trace trace = ice.gameObject.AddComponent<Trace>() as Trace;
-		trace.str = 3;
-		ice.build(name, rezCost, type, type2, iceStr);
+		if (position == new Vector2(-2,-2) || position == new Vector2(-1,-1))
+		{
+			Debug.LogWarning ("Put it in a logical place! ... Popup and all that.");
+			EventHandler.waitForClick();
+		}
+		else
+		{
+			Vector3 click = new Vector3(position.x, 2.5f, position.y);
+			
+			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
+			
+			fw.AddComponent<Ice>();
+			Ice ice = fw.GetComponent<Ice>();
+			Payment payment = ice.gameObject.AddComponent<Payment>() as Payment;
+			Trace trace = ice.gameObject.AddComponent<Trace>() as Trace;
+			ice.build(name, rezCost, type, type2, iceStr);
+			
+			ice.subroutines.Add(payment);
+			ice.subroutines.Add(trace);
+		}
 	}
 }

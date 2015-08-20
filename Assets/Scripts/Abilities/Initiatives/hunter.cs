@@ -14,6 +14,11 @@ public class hunter : Initiative
 		type2 = "Security-Tracer-Observer";
 		kind = "Neutral";
 	}
+
+	void OnDestroy()
+	{
+		EventHandler.CLICKRECEIVED -= fwInstantiate;
+	}
 	
 	public override void effect()
 	{
@@ -30,7 +35,6 @@ public class hunter : Initiative
 		if (position == new Vector2(-2,-2) || position == new Vector2(-1,-1))
 		{
 			Debug.LogWarning ("Put it in a logical place!");
-			Debug.LogError ("position passed to hunter is " +  position.x + " " + position.y);
 			EventHandler.waitForClick();
 		}
 		else
@@ -41,6 +45,7 @@ public class hunter : Initiative
 			
 			fw.AddComponent<Ice>();
 			Ice ice = fw.GetComponent<Ice>();
+			ice.name = "hunter";
 			Trace trace = ice.gameObject.AddComponent<Trace>() as Trace;
 			trace.str = 3;
 			ice.build(name, rezCost, type, type2, iceStr);

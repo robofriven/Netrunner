@@ -4,22 +4,18 @@
 using UnityEngine;
 using System.Collections;
 
-public class CorpObject : MonoBehaviour {
-
-	public GameObject model;
+public class CorpObject : MonoBehaviour
+{
 	public int rezCost;
 	public bool isRezzed;
 
 
-	void Awake () 
+	public CorpObject () 
 	{
 		rezCost = 0;
 		bool isRezzed = false;
 	}
 
-
-	void Update()
-	{
 		// Check for clicking! (This will probably be in a different method)
 
 		// when clicked check isRezzed
@@ -29,7 +25,6 @@ public class CorpObject : MonoBehaviour {
 		// if (!isRezzed && corp.credits >= rezCost)
 			// ask if rez
 				// rez();
-	}
 
 	void rez()
 	{

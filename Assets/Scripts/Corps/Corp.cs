@@ -11,8 +11,11 @@ public class Corp : MonoBehaviour
 	public string identity;			// probably has a use
 	public int maxInits;			// max cards in deck
 	public int externalInits;		// max allowed from other corps
+
 	public List<Ability> deck;	// used to store the deck
 	public int handSize = 5;
+
+    public List<Initiative> archives;
 
 	public void Awake()
 	{
