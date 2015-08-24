@@ -1,4 +1,4 @@
-﻿//TODO
+//TODO
 
 /*Make the walls come down in a grid
  * Set up some GUI showing what skill you're using

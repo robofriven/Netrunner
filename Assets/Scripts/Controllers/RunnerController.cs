@@ -41,7 +41,8 @@ public class RunnerController : MonoBehaviour {
 	{
 
 		// Pressing Escape will toggle the cursor.
-		if (Input.GetKeyDown (KeyCode.Escape)) {
+		if (Input.GetKeyDown (KeyCode.Escape)) 
+		{
 			if (cursorHidden)
 			{
 				Cursor.lockState = CursorLockMode.None;
@@ -55,7 +56,16 @@ public class RunnerController : MonoBehaviour {
 				Cursor.visible = false;
 				cursorHidden = true;
 			}
-		} 
+		}
+
+		if (Input.GetKeyDown (KeyCode.Tab))
+		{
+			print("Tab pressed");
+			Skill temp = draw (ref deck);
+			print ("Drew " + temp);
+			hand.Add (temp);
+			print ("Hand is " + hand);
+		}
 
 		// Horizontal Mouse
 		lookx = Input.GetAxis ("Mouse X") * sensitivity;
@@ -64,7 +74,6 @@ public class RunnerController : MonoBehaviour {
 		// Vertical Mouse
 		verticalRotation -= Input.GetAxis ("Mouse Y") * sensitivity;
 		verticalRotation = Mathf.Clamp (verticalRotation, -yConstraint, yConstraint);
-		Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0f, 0f);
 
 
 
@@ -77,6 +86,8 @@ public class RunnerController : MonoBehaviour {
 		{
 			cc.SimpleMove (direction * speed);
 			transform.Rotate(0f, lookx, 0f);
+			Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0f, 0f);
+			
 
 		}
 	}

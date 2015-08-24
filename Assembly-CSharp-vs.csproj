@@ -206,7 +206,7 @@
      <Compile Include="Assets\Scripts\Controllers\MouseClick.cs" />
      <Compile Include="Assets\Scripts\Controllers\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\RunnerController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\skillHandler.cs" />
+     <Compile Include="Assets\Scripts\Controllers\SkillHandler.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Hostile.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Posted.cs" />
