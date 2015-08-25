@@ -11,8 +11,8 @@ public class RunnerController : MonoBehaviour {
 	private CharacterController cc;
 	private float lookx;
 	private float verticalRotation = 0f;
-	[SerializeField] private bool cursorHidden = true;
-	Runner runner;
+	public bool cursorHidden = true;
+	private Runner runner;
 	public List<Skill> deck;
 	public List<Skill> hand;
 
@@ -57,16 +57,19 @@ public class RunnerController : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown (KeyCode.Tab))
+		if (cursorHidden)
 		{
-			if (hand.Count < handSize)
-            {
-                Skill temp = draw (ref deck);
-				hand.Add (temp);
-			}
-			else
+			if (Input.GetKeyDown (KeyCode.Tab))
 			{
-				Debug.Log ("Hand too full... popup and all that");
+				if (hand.Count < handSize)
+	            {
+	                Skill temp = draw (ref deck);
+					hand.Add (temp);
+				}
+				else
+				{
+					Debug.Log ("Hand too full... popup and all that");
+				}
 			}
 		}
 
@@ -105,16 +108,6 @@ public class RunnerController : MonoBehaviour {
 	
 	public Skill draw(ref List<Skill> deck)
 	{
-//		if (hand.Count != null)
-//		{
-//			handCount = hand.Count;
-//		}
-//		else
-//		{
-//			handCount = 0;
-//		}
-
-
 		if (hand.Count < handSize)
 		{
 			Skill skill = new Skill();
@@ -122,7 +115,6 @@ public class RunnerController : MonoBehaviour {
 			deck.RemoveAt (0);
 			handCount++;
 			return skill;
-
 		}
 		else
 		{

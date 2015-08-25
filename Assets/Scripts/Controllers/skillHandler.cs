@@ -41,74 +41,95 @@ public class SkillHandler : MonoBehaviour
 			}
 		}
 
-		if (Input.GetButtonDown ("Jump"))
+
+
+		if (rcReady && runnerController.cursorHidden)
 		{
-			// Am I gonna have a jump???
-		}
-	
-		if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
-		{
-			if (runnerController.hand.Count != 0)
+
+			if (Input.GetButtonDown ("Jump"))
 			{
-				active = (active + 1) % (runnerController.hand.Count);
+				// Am I gonna have a jump???
+			}
+
+
+
+			if (Input.GetButtonDown("Fire1"))
+			{
+				if (rcReady == false)
+				{
+					return;
+				}
+
+				runnerController.hand[active].effect();
+				runnerController.hand.RemoveAt(active);
+			}
+
+
+
+			// These are the quickbar handlers
+			if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+			{
+				if (runnerController.hand.Count != 0)
+				{
+					active = (active + 1) % (runnerController.hand.Count);
+					highlightButton(buttons[active]);
+					describe (active);
+				}
+			}
+			if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+			{
+				if (runnerController.hand.Count != 0)
+	            {
+					if ((active - 1) < 0)
+					{
+						active = runnerController.hand.Count - 1;
+						highlightButton(buttons[active]);
+						describe (active);
+					}
+					else
+					{
+						active --;
+						highlightButton(buttons[active]);
+						describe (active);
+					}
+				}
+			}
+
+			if (Input.GetButtonDown ("QuickBar 1")) 
+			{
+				active = 0;
+				highlightButton(buttons[active]);
+				describe (active);
+			}
+
+
+
+			if (Input.GetButtonDown ("QuickBar 2")) 
+			{
+				active = 1;
+				highlightButton(buttons[active]);
+				describe (active);
+			}
+
+
+
+			if (Input.GetButtonDown ("QuickBar 3")) 
+			{
+				active = 2;
+				highlightButton(buttons[active]);
+				describe (active);
+			}
+
+
+
+			if (Input.GetButtonDown ("QuickBar 4")) 
+			{
+				active = 3;
 				highlightButton(buttons[active]);
 				describe (active);
 			}
 		}
-		if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
-		{
-			if (runnerController.hand.Count != 0)
-            {
-				if ((active - 1) < 0)
-				{
-					active = runnerController.hand.Count - 1;
-					highlightButton(buttons[active]);
-					describe (active);
-				}
-				else
-				{
-					active --;
-					highlightButton(buttons[active]);
-					describe (active);
-				}
-			}
-		}
-
-		if (Input.GetButtonDown ("QuickBar 1")) 
-		{
-			active = 0;
-			highlightButton(buttons[active]);
-			describe (active);
-		}
-
-
-
-		if (Input.GetButtonDown ("QuickBar 2")) 
-		{
-			active = 1;
-			highlightButton(buttons[active]);
-			describe (active);
-		}
-
-
-
-		if (Input.GetButtonDown ("QuickBar 3")) 
-		{
-			active = 2;
-			highlightButton(buttons[active]);
-			describe (active);
-		}
-
-
-
-		if (Input.GetButtonDown ("QuickBar 4")) 
-		{
-			active = 3;
-			highlightButton(buttons[active]);
-			describe (active);
-		}
 	}
-
 
 
 	public void quickBarHandler(int button)

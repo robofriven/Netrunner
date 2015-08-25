@@ -22,7 +22,7 @@ public class crypsis : Skill
 
 	}
 	
-	public override void effect(int pay)
+	public override void effect()
 	{
 		Debug.Log("Crypsis");
 		//offer choice

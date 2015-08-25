@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Skill : Ability
 {
@@ -18,6 +19,8 @@ public class Skill : Ability
 
 	public GameController gameController;
 
+
+
 	// Use this for initialization
 	public Skill() {
 		description = "This person was way too busy to bother putting in a description";
@@ -25,11 +28,14 @@ public class Skill : Ability
 		gameController = GameObject.FindObjectOfType<GameController>() as GameController;
 	}
 
+
 	public virtual void effect(int temp)
 	{
 		Debug.LogError("Skill has no effect");
 		throw new System.NotImplementedException();
 	}
+
+
 
 	public void timer(int num)
 	{
@@ -37,16 +43,22 @@ public class Skill : Ability
 		Debug.Log("This is the place where the timer will activate for the player.... when I figure that out.");
 	}
 
+
+
 	public Corp findCorp()
 	{
 		Corp corp = GameObject.FindObjectOfType(typeof(Corp)) as Corp;
 		return corp;
 	}
 	
+
+
 	public Runner findRunner()
 	{
 		return GameObject.FindObjectOfType(typeof(Runner)) as Runner;
 	}
+
+
 
 	public RunnerController findRC()
 	{
