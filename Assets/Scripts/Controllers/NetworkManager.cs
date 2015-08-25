@@ -111,7 +111,7 @@ public class NetworkManager : MonoBehaviour {
 	{
 		GameObject runnerGO = (GameObject)PhotonNetwork.Instantiate("Runner", runner.transform.position, runner.transform.rotation, 0);
 		((MonoBehaviour)runnerGO.GetComponent("RunnerController")).enabled = true;
-		((MonoBehaviour)runnerGO.GetComponent("create")).enabled = true;
+		((MonoBehaviour)runnerGO.GetComponent("create")).enabled = false;
 		runnerGO.transform.FindChild ("MainCamera").gameObject.SetActive(true);
 		runnerUI.SetActive(true);
 

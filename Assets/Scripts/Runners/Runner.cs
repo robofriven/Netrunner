@@ -17,7 +17,7 @@ public class Runner : MonoBehaviour
 	public int agendaPts;		// Victory pts (7 to win in normal game)
 	public int tags;
 	public hp health;
-	public int handSize;
+	public int handSize = 5;
 	public List<Skill> deck;
 	public int mem;
 	public bool run;
@@ -28,7 +28,6 @@ public class Runner : MonoBehaviour
 		agendaPts = 0;
 		tags = 0;
 		health = GameObject.FindObjectOfType(typeof(hp)) as hp;
-		handSize = 5;
 		mem = 4;
 		deck = buildDeck();
 		run = false;

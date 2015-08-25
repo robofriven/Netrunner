@@ -7,69 +7,109 @@ using UnityEngine.EventSystems;
 
 public class SkillHandler : MonoBehaviour
 {
+	public Text nameField;
+	public Text descriptionField;
+	public Text costField;
 
 	public List<Skill> skills;
 	public int active;
 	public List<Button> buttons;
 
+	public RunnerController runnerController;
+	private bool rcReady = false;
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		active = 0;
-		skills = new List<Skill>();
-		skills.Add(new batteringRam());
-		skills.Add (new aesop());
-		skills.Add (new diesel());
-		skills.Add (new toolbox());
-		highlightButton (buttons[active]);
+//		highlightButton (buttons[active]);
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (rcReady == false)
+		{
+			runnerController = GameObject.FindObjectOfType<RunnerController>() as RunnerController;
+			if (runnerController != null)
+			{
+				rcReady = true;
+				highlightButton(buttons[active]);
+				describe (active);
+
+			}
+		}
 
 		if (Input.GetButtonDown ("Jump"))
 		{
-			Debug.Log ("Jump hit!");
-			randomDealer deal = new randomDealer();
-			deal.deal ("runner");
+			// Am I gonna have a jump???
 		}
 	
 		if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
 		{
-			active = (active + 1) % buttons.Count;
+			if (runnerController.hand.Count != 0)
+			{
+				active = (active + 1) % (runnerController.hand.Count);
+				highlightButton(buttons[active]);
+				describe (active);
+			}
 		}
 		if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
 		{
-			if ((active - 1) < 0)
-			{
-				active = buttons.Count - 1;
-			}
-			else
-			{
-				active = active - 1;
+			if (runnerController.hand.Count != 0)
+            {
+				if ((active - 1) < 0)
+				{
+					active = runnerController.hand.Count - 1;
+					highlightButton(buttons[active]);
+					describe (active);
+				}
+				else
+				{
+					active --;
+					highlightButton(buttons[active]);
+					describe (active);
+				}
 			}
 		}
 
 		if (Input.GetButtonDown ("QuickBar 1")) 
 		{
 			active = 0;
+			highlightButton(buttons[active]);
+			describe (active);
 		}
+
+
+
 		if (Input.GetButtonDown ("QuickBar 2")) 
 		{
 			active = 1;
+			highlightButton(buttons[active]);
+			describe (active);
 		}
+
+
+
 		if (Input.GetButtonDown ("QuickBar 3")) 
 		{
 			active = 2;
+			highlightButton(buttons[active]);
+			describe (active);
 		}
+
+
+
 		if (Input.GetButtonDown ("QuickBar 4")) 
 		{
 			active = 3;
+			highlightButton(buttons[active]);
+			describe (active);
 		}
-
-		highlightButton(buttons[active]);
-	
 	}
+
+
 
 	public void quickBarHandler(int button)
 	{
@@ -90,6 +130,23 @@ public class SkillHandler : MonoBehaviour
 				ExecuteEvents.Execute (buttons[i].gameObject, pointer, ExecuteEvents.pointerExitHandler);
 			}
 			
+		}
+	}
+
+	void describe(int active)
+	{
+		// TODO
+		// Find GUI object with the Name Field and put name there
+		// Find GUI object with Desctiption Field and put description there.
+
+		if (rcReady)
+		{
+			if (runnerController.hand.Count >= active + 1 && runnerController.hand[active] != null)
+			{
+				nameField.text = runnerController.hand[active].name;
+				descriptionField.text = runnerController.hand[active].description;
+				costField.text = (runnerController.hand[active].cost.ToString() + " Cr.");
+			}
 		}
 	}
 }
