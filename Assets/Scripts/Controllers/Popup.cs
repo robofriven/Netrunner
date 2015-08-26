@@ -21,9 +21,11 @@ public class Popup : MonoBehaviour
 		canvasGroup = GetComponent<CanvasGroup>();
         randomWord = FindObjectOfType<RandomWord>();
 
+        canvasGroup.alpha = 0;
+        canvasGroup.interactable = false;
+
         SetButtons();
         textField.text = randomSentence();
-
     }
 
     public void SetButtons(string name1 = "OK", string name2 = "Cancel")
@@ -34,19 +36,40 @@ public class Popup : MonoBehaviour
             buttons[i].transform.SetParent(buttonPanel.transform);
         }
 
-        Text butt0Text = buttons[0].transform.GetChild(0).GetComponent<Text>();
-        Text butt1Text = buttons[1].transform.GetChild(0).GetComponent<Text>();
-
         if (name1 == "OK")
         {
             buttons[0].transform.GetChild(0).GetComponent<Text>().text = word(randomWord.affirmatives);
         }
-        butt1Text.text = name2;
+        buttons[1].transform.GetChild(0).GetComponent<Text>().text = name2;
     }
 
     public void SetButtons(string name1, string name2, string name3)
     {
+        for (int i = 0; i < 3; i++)
+        {
+            buttons.Add(Instantiate(buttonPrefab));
+            buttons[i].transform.SetParent(buttonPanel.transform);
+        }
 
+        buttons[0].transform.GetChild(0).GetComponent<Text>().text = name1;
+        buttons[1].transform.GetChild(0).GetComponent<Text>().text = name2;
+        buttons[2].transform.GetChild(0).GetComponent<Text>().text = name3;
+    }
+
+    public void SetButtons(int num, string[] names)
+    {
+        if (names.Length != num)
+        {
+            Debug.Log("Setbuttons needs all buttons to have names");
+            throw new System.NotImplementedException();
+        }
+
+        for (int i = 0; i < names.Length; i++)
+        {
+            buttons.Add(Instantiate(buttonPrefab));
+            buttons[i].transform.SetParent(buttonPanel.transform);
+            buttons[i].transform.GetChild(0).GetComponent<Text>().text = names[i];
+        }
     }
 
 
@@ -65,4 +88,6 @@ public class Popup : MonoBehaviour
     {
         return words[Random.Range(0, words.Length)];
     }
+
+   
 }

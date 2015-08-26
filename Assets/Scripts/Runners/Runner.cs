@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Runner : MonoBehaviour
 {
-
 	new public string name;
 	public string title; 		//Most Runners have a title like "Digital Tinker"
 	public string description;  //Flavor Text

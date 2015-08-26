@@ -7,16 +7,26 @@ using UnityEngine.EventSystems;
 
 public class SkillHandler : MonoBehaviour
 {
+    public GameController gameController;
 	public Text nameField;
 	public Text descriptionField;
 	public Text costField;
+    public List<Button> Programs;
+    public List<Button> Hardware;
+    public List<Button> Resources;
 
 	public List<Skill> skills;
 	public int active;
 	public List<Button> buttons;
 
 	public RunnerController runnerController;
+    public Runner runner;
+
+
 	private bool rcReady = false;
+    private int progNumb = 0;
+    private int hardNumb = 0;
+    private int resNumb  = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -32,9 +42,11 @@ public class SkillHandler : MonoBehaviour
 		if (rcReady == false)
 		{
 			runnerController = GameObject.FindObjectOfType<RunnerController>() as RunnerController;
-			if (runnerController != null)
+            runner = GameObject.FindObjectOfType<Runner>() as Runner;
+			if (runnerController != null && runner != null)
 			{
 				rcReady = true;
+                print("RCREADY!!! " + runnerController);
 				highlightButton(buttons[active]);
 				describe (active);
 
@@ -60,9 +72,19 @@ public class SkillHandler : MonoBehaviour
 					return;
 				}
 
-				runnerController.hand[active].effect();
-				runnerController.hand.RemoveAt(active);
-			}
+                if (runner.credits >= runnerController.hand[active].cost)
+                {
+                    runner.credits -= runnerController.hand[active].cost;
+                    Debug.Log(progNumb + " is progNumb");
+                    install(runnerController.hand[active], progNumb);
+                    runnerController.hand.RemoveAt(active);
+                }
+                else
+                {
+                    // run a popup with 1 arg and name "OK" and text saying something about being too poor
+                    print("You can't afford that card right now");
+                }
+            }
 
 
 
@@ -170,4 +192,57 @@ public class SkillHandler : MonoBehaviour
 			}
 		}
 	}
+
+
+
+    // Possibly need to add the progNumb value to the parameters so that it will not update as progNumb is updated??
+    void install(Skill skill, int num)
+    {
+
+        print("Install");
+
+        if (!rcReady)
+        {
+            Debug.Log("RunnerController not found yet");
+            return;
+        }
+
+        if (skill.type == "Program" || skill.type == "program")
+        {
+            //print("it was a program");
+
+
+            //TODO fix this
+            if (Programs.Count > 0)
+            {
+                print("You have space for more programs!");
+                Programs[num].name = skill.name;
+                Programs[num].transform.GetChild(0).GetComponent<Text>().text = "X";
+                Programs[num].onClick.AddListener(() => test(num));
+
+                progNumb ++;                
+            }
+            else
+            {
+                // Popup saying it can't be done!!
+                Debug.Log("Popup and all that, but you gots no room left!");
+            }
+        }
+
+        if (skill.type == "Hardware" || skill.type == "hardware")
+        {
+            // ATTACH TO hardware
+        }
+
+        if (skill.type == "Resource" || skill.type == "resource")
+        {
+            // attach to resources
+        }   
+    }
+
+    void test(int num)
+    {
+        Debug.Log("Holy crap this thing worked!!!");
+        Debug.Log("ProgNumb that was passed was " + num);
+    }
 }

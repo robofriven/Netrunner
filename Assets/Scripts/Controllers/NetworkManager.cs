@@ -76,12 +76,12 @@ public class NetworkManager : MonoBehaviour {
 
 	void gameStart()
 	{
-		if (PhotonNetwork.player.ID == 1)
+		if (PhotonNetwork.player.ID == 2)
 		{
 			SpawnCorp();
 			return;
 		}
-		else if (PhotonNetwork.player.ID == 2)
+		else if (PhotonNetwork.player.ID == 1)
 		{
 			SpawnRunner ();
 			return;
@@ -114,7 +114,6 @@ public class NetworkManager : MonoBehaviour {
 		((MonoBehaviour)runnerGO.GetComponent("create")).enabled = false;
 		runnerGO.transform.FindChild ("MainCamera").gameObject.SetActive(true);
 		runnerUI.SetActive(true);
-
 	}
 
 }
