@@ -201,10 +201,12 @@
      <Compile Include="Assets\Scripts\Controllers\ButtonController.cs" />
      <Compile Include="Assets\Scripts\Controllers\CorpController.cs" />
      <Compile Include="Assets\Scripts\Controllers\EventHandler.cs" />
+     <Compile Include="Assets\Scripts\Controllers\File Controller.cs" />
      <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
      <Compile Include="Assets\Scripts\Controllers\HandController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MouseClick.cs" />
      <Compile Include="Assets\Scripts\Controllers\NetworkManager.cs" />
+     <Compile Include="Assets\Scripts\Controllers\Popup.cs" />
      <Compile Include="Assets\Scripts\Controllers\RunnerController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SkillHandler.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
@@ -227,6 +229,7 @@
      <Compile Include="Assets\Scripts\CorpObjects\Ice\Subroutines\TrashProgram.cs" />
      <Compile Include="Assets\Scripts\Corps\Corp.cs" />
      <Compile Include="Assets\Scripts\Corps\Weyland.cs" />
+     <Compile Include="Assets\Scripts\RandomWord.cs" />
      <Compile Include="Assets\Scripts\Runners\Runner.cs" />
      <Compile Include="Assets\Scripts\Runners\kate.cs" />
      <Compile Include="Assets\Scripts\Typer.cs" />
@@ -254,11 +257,13 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Scripts\Affirmatives.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+     <None Include="Assets\Scripts\words.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Scripts\Ideas.txt" />

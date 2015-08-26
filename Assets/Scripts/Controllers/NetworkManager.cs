@@ -76,12 +76,12 @@ public class NetworkManager : MonoBehaviour {
 
 	void gameStart()
 	{
-		if (PhotonNetwork.player.ID == 2)
+		if (PhotonNetwork.player.ID == 1)
 		{
 			SpawnCorp();
 			return;
 		}
-		else if (PhotonNetwork.player.ID == 1)
+		else if (PhotonNetwork.player.ID == 2)
 		{
 			SpawnRunner ();
 			return;
