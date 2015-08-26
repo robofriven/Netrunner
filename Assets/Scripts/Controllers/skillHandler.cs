@@ -65,7 +65,7 @@ public class SkillHandler : MonoBehaviour
 
 
 
-			if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && runnerController.cursorHidden == true)
 			{
 				if (rcReady == false)
 				{
