@@ -1,0 +1,1 @@
+Personal Touch - Doesn't install as Hardware but as a buff, need to change the skill to reflect that (in onInstall)

@@ -20,10 +20,6 @@ public class sureGamble : Skill
 	{
 		Debug.Log("It's good to be the king");
 		Runner runner = findRunner ();
-		if (runner.credits >= cost)
-		{
-			runner.credits += 4;
-			timer (1);
-		}
+		runner.credits += 9;
 	}
 }

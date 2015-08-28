@@ -11,10 +11,16 @@ public class RunnerController : MonoBehaviour {
 	private CharacterController cc;
 	private float lookx;
 	private float verticalRotation = 0f;
-	[SerializeField] private bool cursorHidden = true;
-	Runner runner;
+	public bool cursorHidden = true;
+	private Runner runner;
 	public List<Skill> deck;
-	List<Skill> hand;
+	public List<Skill> hand;
+
+	public SkillHandler skillHandler;
+
+	// TODO don't hardcode this!
+	private int handSize = 5;
+	private int handCount = 0;
 
 
 	// Use this for initialization
@@ -25,15 +31,8 @@ public class RunnerController : MonoBehaviour {
 		Cursor.visible = false;
 		runner = GameObject.FindObjectOfType(typeof(Runner)) as Runner;
 		deck = runner.deck;
-		hand = deal (ref deck);
-		/*
-		Debug.Log("The deck has");
-		for (int i = 0; i < deck.Count; i++)
-		{
-			Debug.Log(deck[i].name);
-		}
-		Debug.Log("And " + deck.Count + " cards");
-		*/
+		hand = new List<Skill>();
+		hand = deal(ref deck);
 	}
 	
 	// Update is called once per frame
@@ -41,7 +40,8 @@ public class RunnerController : MonoBehaviour {
 	{
 
 		// Pressing Escape will toggle the cursor.
-		if (Input.GetKeyDown (KeyCode.Escape)) {
+		if (Input.GetKeyDown (KeyCode.Escape)) 
+		{
 			if (cursorHidden)
 			{
 				Cursor.lockState = CursorLockMode.None;
@@ -55,7 +55,23 @@ public class RunnerController : MonoBehaviour {
 				Cursor.visible = false;
 				cursorHidden = true;
 			}
-		} 
+		}
+
+		if (cursorHidden)
+		{
+			if (Input.GetKeyDown (KeyCode.Tab))
+			{
+				if (hand.Count < handSize)
+	            {
+	                Skill temp = draw (ref deck);
+					hand.Add (temp);
+				}
+				else
+				{
+					Debug.Log ("Hand too full... popup and all that");
+				}
+			}
+		}
 
 		// Horizontal Mouse
 		lookx = Input.GetAxis ("Mouse X") * sensitivity;
@@ -64,7 +80,6 @@ public class RunnerController : MonoBehaviour {
 		// Vertical Mouse
 		verticalRotation -= Input.GetAxis ("Mouse Y") * sensitivity;
 		verticalRotation = Mathf.Clamp (verticalRotation, -yConstraint, yConstraint);
-		Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0f, 0f);
 
 
 
@@ -77,25 +92,37 @@ public class RunnerController : MonoBehaviour {
 		{
 			cc.SimpleMove (direction * speed);
 			transform.Rotate(0f, lookx, 0f);
-
+			Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0f, 0f);
 		}
 	}
 
 	List<Skill> deal(ref List<Skill> deck)
 	{
 		List<Skill> hand = new List<Skill>();
-		for (int i = 1; i <= runner.handSize; i++)
+		for (int i = 1; i <= handSize; i++)
 		{
 			hand.Add (draw(ref deck));
 		}
+
+        //TODO remove this test card
+        hand.Add(new gordianBlade());
 		return hand;
 	}
 	
 	public Skill draw(ref List<Skill> deck)
 	{
-		Skill skill = new Skill();
-		skill = deck[0];
-		deck.RemoveAt (0);
-		return skill;
+		if (hand.Count < handSize)
+		{
+			Skill skill = new Skill();
+			skill = deck[0];
+			deck.RemoveAt (0);
+			handCount++;
+			return skill;
+		}
+		else
+		{
+			Debug.Log ("hand full");
+			return null;
+		}
 	}
 }

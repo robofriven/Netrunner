@@ -3,11 +3,14 @@ using System.Collections;
 
 public class EventHandler : MonoBehaviour 
 {
+    // These events are for waiting for and receiving mouselcicks (used for the corp placing firewalls, etc)
 	public delegate void CLICK();
 	public delegate void PLACE(Vector2 position);
+    
 
 	public static event CLICK WAITFORCLICK;
 	public static event PLACE CLICKRECEIVED;
+    
 
 
 	public static void waitForClick()
@@ -26,5 +29,4 @@ public class EventHandler : MonoBehaviour
 			CLICKRECEIVED(position);
 		}
 	}
-
 }

@@ -33,14 +33,7 @@ public class wallOfStatic : Initiative
 		{
 			Vector3 click = new Vector3(position.x, 2.5f, position.y);
 			
-			GameObject fw = PhotonNetwork.Instantiate ("firewall", click, Quaternion.identity, 0);
-			
-			fw.AddComponent<Ice>();
-			Ice ice = fw.GetComponent<Ice>();
-			EndRun endRun = ice.gameObject.AddComponent<EndRun>() as EndRun;
-			ice.build(name, rezCost, type, type2, iceStr);
-
-			ice.subroutines.Add(endRun);
+			GameObject fw = PhotonNetwork.Instantiate ("Wall of Static", click, Quaternion.identity, 0);
 		}
 	}
 }

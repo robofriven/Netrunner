@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Skill : Ability
 {
@@ -16,11 +17,20 @@ public class Skill : Ability
 	public int    memCost;	 // memory cost of programs
 	public string faction;	 // which class this card belongs to
 
+	protected GameController gameController;
+    protected IcebreakerPopup icePopup;
+
+
+
 	// Use this for initialization
 	public Skill() {
-		description = "This person was way too busy to bother putting in a description";
-		castTime = 10;	
+		castTime = 10;
+		gameController = GameObject.FindObjectOfType<GameController>() as GameController;
+        icePopup = GameObject.FindObjectOfType<IcebreakerPopup>() as IcebreakerPopup;
+
+
 	}
+
 
 	public virtual void effect(int temp)
 	{
@@ -28,11 +38,25 @@ public class Skill : Ability
 		throw new System.NotImplementedException();
 	}
 
-	public void timer(int num)
+    public virtual void onInstall()
+    {
+        return;
+    }
+
+    public virtual void onUninstall()
+    {
+        return;
+    }
+
+
+
+    public void timer(int num)
 	{
 		// will execute the timer when finished for num times
 		Debug.Log("This is the place where the timer will activate for the player.... when I figure that out.");
 	}
+
+
 
 	public Corp findCorp()
 	{
@@ -40,13 +64,22 @@ public class Skill : Ability
 		return corp;
 	}
 	
+
+
 	public Runner findRunner()
 	{
 		return GameObject.FindObjectOfType(typeof(Runner)) as Runner;
 	}
 
+
+
 	public RunnerController findRC()
 	{
 		return GameObject.FindObjectOfType(typeof(RunnerController)) as RunnerController;
 	}
+
+    public GameController findGC()
+    {
+        return Object.FindObjectOfType<GameController>() as GameController;
+    }
 }

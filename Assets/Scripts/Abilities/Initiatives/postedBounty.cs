@@ -19,11 +19,7 @@ public class postedBounty : Initiative
 	
 	public override void effect ()
 	{
-		//When Scored
-		// Give Option
-		// If taken change agendaPts to 0
-		// runner tag++
-		// corp badPub++
-		Debug.Log ("Posted Bounty!");
+		Vector3 position = new Vector3(-65, 5, 5);
+		GameObject fw = PhotonNetwork.Instantiate ("Posted Bounty", position , Quaternion.identity, 0);
 	}
 }

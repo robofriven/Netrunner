@@ -20,16 +20,8 @@ public class privateSecurity : Initiative
 	
 	public override void effect()
 	{
-		// TODO Move this card to scored area after scoring (or someplace else clickable)
+		Vector3 position = new Vector3(-65, 5, 5);
+		GameObject fw = PhotonNetwork.Instantiate ("Private Security", position , Quaternion.identity, 0);
 
-		Debug.Log ("Private Security Force");
-		Runner runner = findRunner();
-		if (scored)
-		{
-			if (runner.tags > 0)
-			{
-				runner.health.takeDamage("meat", 1);
-			}
-		}
 	}
 }

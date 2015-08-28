@@ -14,13 +14,12 @@ public class hostileTakeover : Initiative
 		kind = "Weyland";
 		influence = -1;
 		advancement = 2;
-		agendaPts = 2;
+		agendaPts = 1;
 	}
 
 	public override void effect ()
 	{
-		// When scored
-		// Give 7cr
-		Debug.Log ("Hostile Takeover was clicked");
+		Vector3 position = new Vector3(-65, 5, 5);
+		GameObject fw = PhotonNetwork.Instantiate ("Hostile Takeover", position , Quaternion.identity, 0);
 	}
 }

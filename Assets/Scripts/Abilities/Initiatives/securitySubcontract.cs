@@ -20,17 +20,7 @@ public class securitySubcontract : Initiative
 	
 	public override void effect ()
 	{
-		// Set off timer
-		// Is any ice rezzed?
-			// yes
-				//more than one?
-					// yes
-						// choose one to trash
-					// no
-						// trash only one
-						// give 4cr
-			// no
-				//Can't use card
-		Debug.Log ("Security Subcontract");
+		Vector3 position = new Vector3(-65, 5, 5);
+		GameObject fw = PhotonNetwork.Instantiate ("Security Subcontract", position , Quaternion.identity, 0);
 	}
 }

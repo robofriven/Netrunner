@@ -30,7 +30,7 @@ public class HandController : MonoBehaviour {
 
 	public void tempTester()
 	{
-		Initiative test = new hadriansWall();
+		Initiative test = new privateSecurity();
 		test.effect();
 	}
 }

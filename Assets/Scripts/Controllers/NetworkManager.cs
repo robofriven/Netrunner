@@ -9,8 +9,8 @@ public class NetworkManager : MonoBehaviour {
 
 	public Corp corp;
 	public Runner runner;
-	public Canvas runnerUI;
-	public Canvas corpUI;
+	public GameObject runnerUI;
+	public GameObject corpUI;
 
 
 	// Use this for initialization
@@ -76,12 +76,12 @@ public class NetworkManager : MonoBehaviour {
 
 	void gameStart()
 	{
-		if (PhotonNetwork.player.ID == 1)
+		if (PhotonNetwork.player.ID == 2)
 		{
 			SpawnCorp();
 			return;
 		}
-		else if (PhotonNetwork.player.ID == 2)
+		else if (PhotonNetwork.player.ID == 1)
 		{
 			SpawnRunner ();
 			return;
@@ -101,7 +101,7 @@ public class NetworkManager : MonoBehaviour {
 		((MonoBehaviour)corpGO.GetComponent("CorpController")).enabled = true;
 		CorpController corpController = corpGO.GetComponent<CorpController>();
 		corpGO.transform.FindChild ("MainCamera").gameObject.SetActive(true);
-		corpUI.enabled = true;
+		corpUI.SetActive(true);
 
 	}
 
@@ -111,10 +111,9 @@ public class NetworkManager : MonoBehaviour {
 	{
 		GameObject runnerGO = (GameObject)PhotonNetwork.Instantiate("Runner", runner.transform.position, runner.transform.rotation, 0);
 		((MonoBehaviour)runnerGO.GetComponent("RunnerController")).enabled = true;
-		((MonoBehaviour)runnerGO.GetComponent("create")).enabled = true;
+		((MonoBehaviour)runnerGO.GetComponent("create")).enabled = false;
 		runnerGO.transform.FindChild ("MainCamera").gameObject.SetActive(true);
-		runnerUI.enabled = true;
-
+		runnerUI.SetActive(true);
 	}
 
 }

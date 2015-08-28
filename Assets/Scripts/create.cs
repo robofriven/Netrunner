@@ -1,4 +1,4 @@
-﻿//TODO
+//TODO
 
 /*Make the walls come down in a grid
  * Set up some GUI showing what skill you're using
@@ -17,29 +17,29 @@ public class create : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire1"))
-		{
-			ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
-			hitTransform = FindClosestHit(ray, out hitPoint);
-			
-			if(hitTransform != null && hitTransform.name == "level1" )
-			{
-				//Debug.Log("You hit: " + hitTransform.name + " at " + hitPoint);
-				Instantiate (firewall, hitPoint, Quaternion.identity);
-			}
-			
-		}
+//		if (Input.GetButtonDown("Fire1"))
+//		{
+//			ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
+//			hitTransform = FindClosestHit(ray, out hitPoint);
+//			
+//			if(hitTransform != null && hitTransform.name == "level1" )
+//			{
+//				//Debug.Log("You hit: " + hitTransform.name + " at " + hitPoint);
+//				Instantiate (firewall, hitPoint, Quaternion.identity);
+//			}
+//			
+//		}
 
-		if (Input.GetButtonDown ("Fire2")) 
-		{
-			ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-			hitTransform = FindClosestHit(ray, out hitPoint);
-
-			if (hitTransform != null && hitTransform.name != "level1")
-			{
-				useSkill();
-			}
-		}
+//		if (Input.GetButtonDown ("Fire2")) 
+//		{
+//			ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+//			hitTransform = FindClosestHit(ray, out hitPoint);
+//
+//			if (hitTransform != null && hitTransform.name != "level1")
+//			{
+//				useSkill();
+//			}
+//		}
 	}
 	
 	Transform FindClosestHit(Ray ray, out Vector3 hitPoint)
@@ -65,7 +65,7 @@ public class create : MonoBehaviour {
 
 	void useSkill()
 	{
-		skillHandler handler = GameObject.FindObjectOfType(typeof(skillHandler)) as skillHandler;
+		SkillHandler handler = GameObject.FindObjectOfType(typeof(SkillHandler)) as SkillHandler;
 		if (handler.active >= 0)
 		{
 			handler.skills[handler.active].effect();

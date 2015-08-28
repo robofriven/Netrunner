@@ -15,8 +15,13 @@ public class Ability
 	
 	public virtual void effect()
 	{
-		Debug.LogError("Initiative has no effect");
+		Debug.LogError("Initiative has no effect method");
 		throw new System.NotImplementedException();
 	}
+
+    public virtual void onCleanup()
+    {
+        return;
+    }
 
 }

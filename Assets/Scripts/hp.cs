@@ -19,8 +19,8 @@ public class hp : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		meat.fillAmount = meatDamage;
-		net.fillAmount = netDamage;
+//		meat.fillAmount = meatDamage;
+//		net.fillAmount = netDamage;
 		//Debug.Log (netDamage);
 
 		if (netDamage > 1f)  {netDamage =  1f;}

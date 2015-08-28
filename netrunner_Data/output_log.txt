@@ -20,15 +20,23 @@ Platform assembly: C:\Users\robof_000\Documents\Games\Netrunner\Netrunner\netrun
 Loading C:\Users\robof_000\Documents\Games\Netrunner\Netrunner\netrunner_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
 Platform assembly: C:\Users\robof_000\Documents\Games\Netrunner\Netrunner\netrunner_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\robof_000\Documents\Games\Netrunner\Netrunner\netrunner_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.046 seconds
+- Completed reload, in  0.049 seconds
 desktop: 1360x768 60Hz; virtual: 1360x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\robof_000\Documents\Games\Netrunner\Netrunner\netrunner_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\robof_000\Documents\Games\Netrunner\Netrunner\netrunner_Data\Managed\System.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1562)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1715)
+
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1bd4 -> priority: 1 
+  Thread -> id: 1550 -> priority: 1 
 JoinLobby
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
@@ -42,26 +50,6 @@ OnJoinedRoom
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
 Only 1 player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Hadrian's Wall
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Click where to place your firewall... will eventually be a popup or something
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Mouse hit level1 at (-65.6, 0.1, 5.8)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Vector = (0.0, 10.0), rayHit.point = (-65.6, 0.1, 5.8)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Clicked = (-70.0, 5.0)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 

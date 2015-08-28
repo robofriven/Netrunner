@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class kate : Runner {
-
-	// Use this for initialization
+public class kate : Runner 
+{
 	void Start () 
 	{
 		name = "Kate Mac";
