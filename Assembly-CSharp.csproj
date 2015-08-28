@@ -206,7 +206,6 @@
      <Compile Include="Assets\Scripts\Controllers\HandController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MouseClick.cs" />
      <Compile Include="Assets\Scripts\Controllers\NetworkManager.cs" />
-     <Compile Include="Assets\Scripts\Controllers\Popup.cs" />
      <Compile Include="Assets\Scripts\Controllers\RunnerController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SkillHandler.cs" />
      <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
@@ -233,6 +232,8 @@
      <Compile Include="Assets\Scripts\Runners\Runner.cs" />
      <Compile Include="Assets\Scripts\Runners\kate.cs" />
      <Compile Include="Assets\Scripts\Typer.cs" />
+     <Compile Include="Assets\Scripts\UI\IcebreakerPopup.cs" />
+     <Compile Include="Assets\Scripts\UI\Popup.cs" />
      <Compile Include="Assets\Scripts\create.cs" />
      <Compile Include="Assets\Scripts\hp.cs" />
      <Compile Include="Assets\Scripts\randomDealer.cs" />
@@ -266,7 +267,7 @@
      <None Include="Assets\Scripts\words.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
-     <None Include="Assets\Scripts\Ideas.txt" />
+     <None Include="Assets\Scripts\Texts\Ideas.txt" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -295,6 +296,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Scripts\Texts\TODO - Fixes and the like.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />

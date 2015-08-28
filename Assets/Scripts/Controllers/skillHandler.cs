@@ -28,15 +28,15 @@ public class SkillHandler : MonoBehaviour
     private int hardNumb = 0;
     private int resNumb  = 0;
 
-	// Use this for initialization
+
+
 	void Start () 
 	{
 		active = 0;
-//		highlightButton (buttons[active]);
-
 	}
 	
-	// Update is called once per frame
+	
+
 	void Update () 
 	{
 		if (rcReady == false)
@@ -46,7 +46,7 @@ public class SkillHandler : MonoBehaviour
 			if (runnerController != null && runner != null)
 			{
 				rcReady = true;
-                print("RCREADY!!! " + runnerController);
+                //print("RCREADY!!! " + runnerController);
 				highlightButton(buttons[active]);
 				describe (active);
 
@@ -61,6 +61,10 @@ public class SkillHandler : MonoBehaviour
 			if (Input.GetButtonDown ("Jump"))
 			{
 				// Am I gonna have a jump???
+                if (rcReady)
+                {
+                    runner.credits++;
+                }
 			}
 
 
@@ -75,9 +79,11 @@ public class SkillHandler : MonoBehaviour
                 if (runner.credits >= runnerController.hand[active].cost)
                 {
                     runner.credits -= runnerController.hand[active].cost;
-                    Debug.Log(progNumb + " is progNumb");
-                    install(runnerController.hand[active], progNumb);
+                    install(runnerController.hand[active], progNumb, hardNumb, resNumb);
                     runnerController.hand.RemoveAt(active);
+                    active = 0;
+                    highlightButton(buttons[active]);
+                    describe(active);
                 }
                 else
                 {
@@ -176,7 +182,7 @@ public class SkillHandler : MonoBehaviour
 		}
 	}
 
-	void describe(int active)
+	void describe(int activeSkill)
 	{
 		// TODO
 		// Find GUI object with the Name Field and put name there
@@ -184,11 +190,17 @@ public class SkillHandler : MonoBehaviour
 
 		if (rcReady)
 		{
-			if (runnerController.hand.Count >= active + 1 && runnerController.hand[active] != null)
+			if (runnerController.hand.Count >= activeSkill + 1 && runnerController.hand[activeSkill] != null)
 			{
-				nameField.text = runnerController.hand[active].name;
-				descriptionField.text = runnerController.hand[active].description;
-				costField.text = (runnerController.hand[active].cost.ToString() + " Cr.");
+                //if (activeSkill >= runnerController.hand.Count)
+                //{
+                //    activeSkill = runnerController.hand.Count - 1;
+                //    active = activeSkill;
+                //    highlightButton(buttons[active]);
+                //}
+				nameField.text = runnerController.hand[activeSkill].name;
+				descriptionField.text = runnerController.hand[activeSkill].description;
+				costField.text = (runnerController.hand[activeSkill].cost.ToString() + " Cr.");
 			}
 		}
 	}
@@ -196,7 +208,7 @@ public class SkillHandler : MonoBehaviour
 
 
     // Possibly need to add the progNumb value to the parameters so that it will not update as progNumb is updated??
-    void install(Skill skill, int num)
+    void install(Skill skill, int numProg, int numHard, int numRes)
     {
 
         print("Install");
@@ -213,12 +225,13 @@ public class SkillHandler : MonoBehaviour
 
 
             //TODO fix this
-            if (Programs.Count > 0)
+            if (progNumb < Programs.Count)
             {
                 print("You have space for more programs!");
-                Programs[num].name = skill.name;
-                Programs[num].transform.GetChild(0).GetComponent<Text>().text = "X";
-                Programs[num].onClick.AddListener(() => test(num));
+                Programs[numProg].name = skill.name;
+                Programs[numProg].transform.GetChild(0).GetComponent<Text>().text = "X";
+                Programs[numProg].onClick.AddListener(() => skill.effect());
+                skill.onInstall();
 
                 progNumb ++;                
             }
@@ -232,17 +245,46 @@ public class SkillHandler : MonoBehaviour
         if (skill.type == "Hardware" || skill.type == "hardware")
         {
             // ATTACH TO hardware
+            if (hardNumb < Hardware.Count)
+            {
+                print("You have space for more programs!");
+                Hardware[numHard].name = skill.name;
+                Hardware[numHard].transform.GetChild(0).GetComponent<Text>().text = "X";
+                Hardware[numHard].onClick.AddListener(() => skill.effect());
+                skill.onInstall();
+
+                hardNumb++;
+            }
+            else
+            {
+                // Popup saying it can't be done!!
+                Debug.Log("Popup and all that, but you gots no room left!");
+            }
         }
 
         if (skill.type == "Resource" || skill.type == "resource")
         {
             // attach to resources
-        }   
-    }
+            if (resNumb < Resources.Count)
+            {
+                print("You have space for more programs!");
+                Resources[numRes].name = skill.name;
+                Resources[numRes].transform.GetChild(0).GetComponent<Text>().text = "X";
+                Resources[numRes].onClick.AddListener(() => skill.effect());
+                skill.onInstall();
 
-    void test(int num)
-    {
-        Debug.Log("Holy crap this thing worked!!!");
-        Debug.Log("ProgNumb that was passed was " + num);
+                resNumb++;
+            }
+            else
+            {
+                // Popup saying it can't be done!!
+                Debug.Log("Popup and all that, but you gots no room left!");
+            }
+        }
+
+        if (skill.type == "Event" || skill.type == "event")
+        {
+            skill.effect();
+        }
     }
 }

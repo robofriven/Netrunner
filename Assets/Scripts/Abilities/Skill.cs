@@ -17,15 +17,18 @@ public class Skill : Ability
 	public int    memCost;	 // memory cost of programs
 	public string faction;	 // which class this card belongs to
 
-	public GameController gameController;
+	protected GameController gameController;
+    protected IcebreakerPopup icePopup;
 
 
 
 	// Use this for initialization
 	public Skill() {
-		description = "This person was way too busy to bother putting in a description";
 		castTime = 10;
 		gameController = GameObject.FindObjectOfType<GameController>() as GameController;
+        icePopup = GameObject.FindObjectOfType<IcebreakerPopup>() as IcebreakerPopup;
+
+
 	}
 
 
@@ -35,9 +38,19 @@ public class Skill : Ability
 		throw new System.NotImplementedException();
 	}
 
+    public virtual void onInstall()
+    {
+        return;
+    }
+
+    public virtual void onUninstall()
+    {
+        return;
+    }
 
 
-	public void timer(int num)
+
+    public void timer(int num)
 	{
 		// will execute the timer when finished for num times
 		Debug.Log("This is the place where the timer will activate for the player.... when I figure that out.");
@@ -64,4 +77,9 @@ public class Skill : Ability
 	{
 		return GameObject.FindObjectOfType(typeof(RunnerController)) as RunnerController;
 	}
+
+    public GameController findGC()
+    {
+        return Object.FindObjectOfType<GameController>() as GameController;
+    }
 }

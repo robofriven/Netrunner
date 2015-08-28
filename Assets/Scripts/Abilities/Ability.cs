@@ -19,4 +19,9 @@ public class Ability
 		throw new System.NotImplementedException();
 	}
 
+    public virtual void onCleanup()
+    {
+        return;
+    }
+
 }

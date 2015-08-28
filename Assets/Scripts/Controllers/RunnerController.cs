@@ -103,6 +103,9 @@ public class RunnerController : MonoBehaviour {
 		{
 			hand.Add (draw(ref deck));
 		}
+
+        //TODO remove this test card
+        hand.Add(new gordianBlade());
 		return hand;
 	}
 	

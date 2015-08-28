@@ -29,19 +29,4 @@ public class EventHandler : MonoBehaviour
 			CLICKRECEIVED(position);
 		}
 	}
-
-
-
-    // These events will delegate the programs section of the runners GUI
-    public delegate void PROGRAM1(int buttNumb);
-    public static event PROGRAM1 PROGRAM1ED;
-
-    public static void program1ed(int buttNumb)
-    {
-        if (PROGRAM1ED != null)
-        {
-            PROGRAM1ED(buttNumb);
-        }
-    }
-
 }

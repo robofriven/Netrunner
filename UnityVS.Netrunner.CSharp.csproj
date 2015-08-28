@@ -240,7 +240,6 @@
     <Compile Include="Assets\Scripts\Controllers\HandController.cs" />
     <Compile Include="Assets\Scripts\Controllers\MouseClick.cs" />
     <Compile Include="Assets\Scripts\Controllers\NetworkManager.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Popup.cs" />
     <Compile Include="Assets\Scripts\Controllers\RunnerController.cs" />
     <Compile Include="Assets\Scripts\Controllers\SkillHandler.cs" />
     <Compile Include="Assets\Scripts\CorpObjects\Agenda\Agenda.cs" />
@@ -267,6 +266,8 @@
     <Compile Include="Assets\Scripts\Runners\Runner.cs" />
     <Compile Include="Assets\Scripts\Runners\kate.cs" />
     <Compile Include="Assets\Scripts\Typer.cs" />
+    <Compile Include="Assets\Scripts\UI\IcebreakerPopup.cs" />
+    <Compile Include="Assets\Scripts\UI\Popup.cs" />
     <Compile Include="Assets\Scripts\create.cs" />
     <Compile Include="Assets\Scripts\hp.cs" />
     <Compile Include="Assets\Scripts\randomDealer.cs" />
@@ -281,7 +282,8 @@
     <None Include="Assets\Plugins\release_history.txt" />
     <None Include="Assets\Scripts\Affirmatives.txt" />
     <None Include="Assets\Scripts\Completed.txt" />
-    <None Include="Assets\Scripts\Ideas.txt" />
+    <None Include="Assets\Scripts\Texts\Ideas.txt" />
+    <None Include="Assets\Scripts\Texts\TODO - Fixes and the like.txt" />
     <None Include="Assets\Scripts\words.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />

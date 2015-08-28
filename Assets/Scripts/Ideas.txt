@@ -1,1 +1,0 @@
-For the corners of the walls use a seperate cube item that has it's own "moving" material that looks like a dot(s) traveling by changing the offset of the material.

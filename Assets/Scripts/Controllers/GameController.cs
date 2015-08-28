@@ -1,4 +1,4 @@
-﻿/* So far the only thing I know I need here is states (menu, normal, run)
+﻿/* Will hold scoring information for the player and overall state of the game information (Menu <- Not implemented, Play <- normal game mode, Run <- runner is running)
  */
 
 using UnityEngine;
@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour {
 
     public Runner runner;
 
-    string state;
+    public string state;
 	string nothingYet;
 	public float timeSinceStart;
 
@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour {
 
 	void Awake()
 	{
-		state = "menu";
+		state = "Play";
 
 	}
 

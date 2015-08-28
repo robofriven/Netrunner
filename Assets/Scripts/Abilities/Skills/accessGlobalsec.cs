@@ -7,7 +7,7 @@ public class accessGlobalsec : Skill
 	public accessGlobalsec() 
 	{
 		name = "Access to Globalsec";
-		description = "+1 Link";
+		description = "Install for +1 Link";
 		castTime = 10;
 		corp = false;
 		cost = 1;
@@ -18,14 +18,19 @@ public class accessGlobalsec : Skill
 	
 	public override void effect()
 	{
-		Debug.Log("Access to Globalsec");
-		gameController.timer(1);
-		Runner runner = findRunner ();
-		if (runner.credits >= cost)
-		{
-			runner.links ++;
-			runner.credits -= cost;
-		}
+        return;
 	}
+
+    public override void onInstall()
+    {
+        Runner runner = findRunner();
+        runner.links++;
+    }
+
+    public override void onUninstall()
+    {
+        Runner runner = findRunner();
+        runner.links--;
+    }
 }
 
